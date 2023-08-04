@@ -1,0 +1,19 @@
+# $s0=y, $s1=product, $s2=i
+
+main:
+	addi $t1, $0, 2
+	addi $t2, $0, 3
+	jal [7]
+	add $s0, $v, $0
+	j [17]
+multiplyNumbers:
+	addi $s1, $0, 0
+	addi $s2, $0, 0
+	loop:
+		beq $s2, $t2, [14]
+		add $s1, $s1, $t1
+		j [10]
+	exit:
+		add $v0, $s1, $0
+		jr $ra
+end:

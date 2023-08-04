@@ -1,0 +1,17 @@
+main:
+addi $t0, $ze, 2
+addi $t1, $ze, 3
+jal multiply
+sub $s0, $v0, $ze
+j 8
+multiply:
+addi $s1, $ze, 0
+addi $s2, $ze, 0
+loop:
+beq $s2, $t1, 14
+add $s1, $s1, $t0
+j 10
+exit:
+add $v0, $s1, $ze
+jr $ra
+end:
